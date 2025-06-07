@@ -1,0 +1,46 @@
+.main-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  flex-shrink: 0;
+  border-right: 1px solid #333;
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  border-bottom: 1px solid #333;
+}
+
+/* Dostosowanie stylów dla zagnieżdżonych komponentów */
+:root {
+  --primary-color: #3b82f6; /* Niebieska główna */
+  --primary-hover: #2563eb;
+  --background-dark: #121212;
+  --background-light: #1e1e1e;
+  --border-color: #333;
+  --text-light: #ffffff;
+  --text-muted: #888888;
+}

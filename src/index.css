@@ -1,3 +1,21 @@
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --background-dark: #121212;
+  --background-light: #1e1e1e;
+  --border-color: #333;
+  --text-light: #ffffff;
+  --text-muted: #888888;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +23,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-dark);
+  color: var(--text-light);
 }
 
 code {

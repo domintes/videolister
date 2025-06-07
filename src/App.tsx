@@ -1,25 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { Provider } from 'jotai';
+import { MainLayout } from './pages/MainLayout/MainLayout';
+import { loadAppData, saveAppData } from './services/electronService';
+import { useAtom } from 'jotai';
+import { playlistsAtom, tagsAtom } from './store/atoms';
 import './App.css';
+
+const AppContent: React.FC = () => {
+  const [playlists, setPlaylists] = useAtom(playlistsAtom);
+  const [tags, setTags] = useAtom(tagsAtom);
+  
+  // Wczytanie zapisanych danych przy uruchomieniu aplikacji
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const result = await loadAppData();
+        if (result?.success && result?.data) {
+          const { playlists: savedPlaylists, tags: savedTags } = result.data;
+          
+          if (savedPlaylists?.length) setPlaylists(savedPlaylists);
+          if (savedTags?.length) setTags(savedTags);
+        }
+      } catch (error) {
+        console.error('Błąd podczas wczytywania danych:', error);
+      }
+    };
+    
+    loadData();
+  }, [setPlaylists, setTags]);
+  
+  // Automatyczne zapisywanie danych przy zmianach
+  useEffect(() => {
+    if (playlists.length === 0 && tags.length === 0) return;
+    
+    const saveData = async () => {
+      try {
+        await saveAppData({ playlists, tags });
+      } catch (error) {
+        console.error('Błąd podczas zapisywania danych:', error);
+      }
+    };
+    
+    const timer = setTimeout(saveData, 500);
+    return () => clearTimeout(timer);
+  }, [playlists, tags]);
+  
+  return <MainLayout />;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <div className="App">
+        <AppContent />
+      </div>
+    </Provider>
   );
 }
 

@@ -1,0 +1,54 @@
+.playlist-sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 16px;
+  box-sizing: border-box;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.add-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.playlists-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.playlist-item {
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #2a2a2a;
+  transition: background-color 0.2s;
+}
+
+.playlist-item:hover {
+  background-color: #3a3a3a;
+}

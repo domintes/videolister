@@ -1,0 +1,182 @@
+.browser-tabs-importer {
+  position: relative;
+}
+
+.import-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.import-button:hover {
+  background-color: #3a3a3a;
+}
+
+.tabs-modal {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 500px;
+  max-width: 90vw;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.tabs-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #333;
+}
+
+.tabs-modal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-button:hover {
+  color: white;
+}
+
+.tabs-content {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.loading, .no-tabs {
+  padding: 24px;
+  text-align: center;
+  color: #aaa;
+}
+
+.no-tabs button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.tabs-list {
+  padding: 8px;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 4px;
+}
+
+.tab-item:hover {
+  background-color: #2a2a2a;
+}
+
+.tab-item.selected {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.tab-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.default-icon {
+  width: 16px;
+  height: 16px;
+  background-color: #666;
+  border-radius: 50%;
+}
+
+.tab-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.tab-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-info p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-select {
+  color: #3b82f6;
+  margin-left: 12px;
+}
+
+.tabs-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-top: 1px solid #333;
+}
+
+.select-all, .import-selected {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.select-all {
+  background-color: transparent;
+  border: 1px solid #555;
+  color: #ddd;
+}
+
+.import-selected {
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+}
+
+.import-selected:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}

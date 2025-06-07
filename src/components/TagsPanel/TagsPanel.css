@@ -1,0 +1,75 @@
+.tags-panel {
+  padding: 16px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.tags-header {
+  margin-bottom: 12px;
+}
+
+.tags-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.add-tag-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-tag-form input {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.add-tag-form button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-item {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+  color: white;
+}
+
+.tag-item:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tag-item.selected {
+  box-shadow: 0 0 0 2px white;
+}
+
+.no-tags {
+  color: #888;
+  text-align: center;
+  font-style: italic;
+  margin: 10px 0;
+}
